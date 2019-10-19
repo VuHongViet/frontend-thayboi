@@ -1,0 +1,260 @@
+.container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(to bottom, #fff, #fff);
+}
+
+.overlayContainer {
+  position: absolute;
+  width: 100%;
+  bottom: 70%;
+  left: 0;
+  height: 30%;
+  overflow: hidden;
+  transition: transform 0.5s ease-in-out;
+  z-index: 100;
+}
+
+.overlay {
+  position: relative;
+  width: 100%;
+  height: 200%;
+  background-image: linear-gradient(253deg, #38ba8a 0, #38ba8a 100%);
+  color: #fff;
+  transform: translateY(0);
+  transition: transform 0.5s ease-in-out;
+}
+
+.overlayLeft {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 50%;
+  padding: 70px 40px;
+  text-align: center;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.5s ease-in-out;
+}
+
+.overlayRight {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 50%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 70px 40px;
+  text-align: center;
+  transform: translateY(5%);
+  transition: transform 0.5s ease-in-out;
+}
+
+.button {
+  border-radius: 20px;
+  border: 1px solid #009345;
+  background-color: #009345;
+  color: #000;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 10px 40px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: transform 0.5s ease-in;
+}
+
+button:active {
+  transform: scale(0.9);
+}
+
+button:focus {
+  outline: none;
+}
+
+button.invert {
+  background-color: #fff;
+  border-color: #fff;
+}
+
+.form {
+  position: absolute;
+  top: 30%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  padding: 40px 30px;
+  box-sizing: border-box;
+  text-align: center;
+  background: linear-gradient(to bottom, #fff, #fff);
+  transition: all 0.5s ease-in-out;
+}
+
+.signIn {
+  left: 0;
+  z-index: 2;
+}
+
+.signUp {
+  left: 0;
+  z-index: 1;
+  opacity: 0;
+}
+
+.input {
+  background-color: #eee;
+  border: none;
+  padding: 8px 15px;
+  margin: 6px 0;
+  width: calc(100% - 30px);
+  border-radius: 15px;
+  border-bottom: 1px solid #ddd;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.4), 0 -1px 1px #fff, 0 1px 0 #fff;
+  overflow: hidden;
+}
+
+.input:focus {
+  outline: none;
+  background-color: #fff;
+}
+
+.signUpActive .signIn {
+  transform: translateY(-40%);
+}
+
+.signUpActive .signUp {
+  transform: translateY(-40%);
+  opacity: 1;
+  z-index: 5;
+}
+
+.signUpActive .overlayContainer {
+  transform: translateY(270%);
+}
+
+.signUpActive .overlay {
+  transform: translateY(-55%);
+}
+
+.signUpActive .overlayLeft {
+  transform: translateY(-10%);
+}
+
+.socialContainer {
+  margin: 20px 0;
+}
+
+.socialContainer a {
+  border: 1px solid #dddddd;
+  border-radius: 50%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 5px;
+  height: 40px;
+  width: 40px;
+}
+
+.loginForm {
+  width: 270px;
+  height: auto;
+  background: url(../image/login_line.svg) center center repeat-x;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loginFormTitle {
+  color: #555a59;
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  background-color: #fff;
+  box-sizing: border-box;
+  padding: 0 8px;
+}
+
+.input::placeholder {
+  font-weight: bold;
+}
+
+.socialFacebook {
+  background: url(../image/facebook.svg) center center/contain no-repeat;
+}
+
+.socialGoogle {
+  background: url(../image/google.svg) center center/contain no-repeat;
+}
+
+@media screen and (min-width: 768px) {
+  .overlayContainer {
+    width: 30%;
+    top: 0;
+    left: 70%;
+    height: 100%;
+  }
+
+  .overlay {
+    left: -235%;
+    height: 100%;
+    width: 335%;
+  }
+
+  .overlayLeft {
+    height: 100%;
+    width: 30%;
+    right: 0;
+    transform: translateY(0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .overlayRight {
+    height: 100%;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .form {
+    top: 0;
+    width: 70%;
+    height: 100%;
+  }
+
+  .signUpActive .signIn {
+    transform: translateX(43%);
+    opacity: 0;
+  }
+
+  .signUpActive .signUp {
+    transform: translateX(45%);
+    opacity: 1;
+    z-index: 5;
+  }
+
+  .signUpActive .overlayContainer {
+    transform: translateX(-235%);
+  }
+
+  .signUpActive .overlay {
+    transform: translateY(0);
+    transform: translateX(70%);
+  }
+
+  .signUpActive .overlayLeft {
+    transform: translateY(0);
+  }
+}
